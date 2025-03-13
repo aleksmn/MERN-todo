@@ -1,20 +1,19 @@
-import { useEffect, useState } from "react";
-
-const apiUrl = import.meta.env.VITE_API_URL;
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Todo from './components/Todo';
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  // Получим сообщение с сервера
-  useEffect(() => {
-    fetch(apiUrl)
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
-  }, []);
-
+  const headStyle = {
+    textAlign: "center",
+  }
   return (
-    <div className="App">
-      <h1>{message}</h1>
+    <div>
+      <h1 style={headStyle}>Todo List</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Todo/>}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
