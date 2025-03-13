@@ -1,0 +1,16 @@
+{
+  "name": "mern-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-server": "cd backend && npm install",
+    "server": "cd backend && nodemon server.js",
+    "start-server": "cd backend && node server.js",
+    "build-client": "cd frontend && npm install && npm run build",
+    "client": "cd frontend && npm run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
