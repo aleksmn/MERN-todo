@@ -128,12 +128,16 @@ function Todo() {
                                             </td>
                                             <td>
                                                 {editableId === data._id ? (
-                                                    <input
+                                                    <select
                                                         type="text"
                                                         className="form-control"
                                                         value={editedStatus}
                                                         onChange={(e) => setEditedStatus(e.target.value)}
-                                                    />
+                                                    >
+                                                    <option value="Pending">Pending</option>
+                                                    <option value="Ongoing">Ongoing</option>
+                                                    <option value="Completed">Completed</option>
+                                                    </select>
                                                 ) : (
                                                     data.status
                                                 )}
@@ -194,12 +198,16 @@ function Todo() {
                         </div>
                         <div className="mb-3">
                             <label>Status</label>
-                            <input
+                            <select
                                 className="form-control"
                                 type="text"
                                 placeholder="Enter Status"
                                 onChange={(e) => setNewStatus(e.target.value)}
-                            />
+                            >
+                            <option value="Pending" selected>Pending</option>
+                            <option value="Ongoing">Ongoing</option>
+                            <option value="Completed">Completed</option>
+                            </select>
                         </div>
                         <div className="mb-3">
                             <label>Deadline</label>
